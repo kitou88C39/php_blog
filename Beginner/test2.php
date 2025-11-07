@@ -7,8 +7,16 @@ $post_at = "2025/11/05";
 $tag = ["PHP", "テスト", "ブログ"];
 $status = true;
 
-//定数
-const ID = 1;
+//ブログ①
+$blog = array(
+    "id" => ID,
+    "title" => $title,
+    "content" => $content,
+    "post_at" => $post,
+    "tag" => $tag,
+    "status" => $status
+);
+
 
 
 
