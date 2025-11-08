@@ -29,6 +29,16 @@ $blog = array(
 //配列の中から添え字orキーを指定する
 echo $blog1['title'];
 
+//ブログ②
+$blog2 = [
+    'id2' => ID2,
+    'title2' => $title2,
+    'content2' => $content2,
+    'post_at2' => $post2,
+    'tag2' => $tag2,
+    'status2' => $status2
+];
 
+var_dump($blog2);
 
 ?>
