@@ -2,6 +2,8 @@
 
 $blog = $_POST;
 
-var_dump($blog);
+foreach ($blog as $key => $value) {
+    echo $key . ':' . $value;
+}
 
 ?>
