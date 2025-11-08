@@ -52,6 +52,11 @@ foreach ($blog1 as $blog) {
     echo $blog;
 }
 
+//②キーとバリューを出力
+foreach ($blog2 as $key => $value) {
+    echo $key . $value;
+}
+
 //
 
 
