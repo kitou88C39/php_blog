@@ -57,8 +57,12 @@ foreach ($blog2 as $key => $value) {
     echo $key . $value;
 }
 
-//
-
+//多次元配列blogsを展開する
+foreach ($blogs as $blog) {
+    foreach($blog as $value){
+        echo $value;
+    }
+}
 
 
 ?>
