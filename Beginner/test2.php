@@ -9,15 +9,17 @@ $status = true;
 
 //ブログ①
 $blog = array(
-    "id" => ID,
-    "title" => $title,
-    "content" => $content,
-    "post_at" => $post,
-    "tag" => $tag,
-    "status" => $status
+    'id' => ID,
+    'title' => $title,
+    'content' => $content,
+    'post_at' => $post,
+    'tag' => $tag,
+    'status' => $status
 );
 
-
+//配列の取り出し方
+//配列の中から添え字orキーを指定する
+echo $blog1['title'] . $blog1["content"] . $blog1["status"];
 
 
 
