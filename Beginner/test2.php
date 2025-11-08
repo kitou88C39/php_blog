@@ -1,11 +1,19 @@
 <?php
 //変数
 //ブログのタイトル
+const ID = 1;
 $title = "phpテスト";
 $content = "PHPテストです";
 $post_at = "2025/11/05";
-$tag = ["PHP", "テスト", "ブログ"];
+$tag = ["PHP", "プログラミング"];
 $status = true;
+
+const ID2 = 2;
+$title2 = "phpテスト2";
+$content2 = "PHPテストです2";
+$post_at2 = "2025/11/05";
+$tag2 = ["PHP2", "プログラミング2"];
+$status2 = true;
 
 //ブログ①
 $blog = array(
@@ -19,7 +27,7 @@ $blog = array(
 
 //配列の取り出し方
 //配列の中から添え字orキーを指定する
-echo $blog1['title'] . $blog1["content"] . $blog1["status"];
+echo $blog1['title'];
 
 
 
