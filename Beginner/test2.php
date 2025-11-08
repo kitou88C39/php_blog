@@ -16,7 +16,7 @@ $tag2 = ["PHP2", "プログラミング2"];
 $status2 = true;
 
 //ブログ①
-$blog = array(
+$blog1 = array(
     'id' => ID,
     'title' => $title,
     'content' => $content,
@@ -27,7 +27,7 @@ $blog = array(
 
 //配列の取り出し方
 //配列の中から添え字orキーを指定する
-echo $blog1['title'];
+//echo $blog1['title'];
 
 //ブログ②
 $blog2 = [
@@ -39,6 +39,11 @@ $blog2 = [
     'status2' => $status2
 ];
 
-var_dump($blog2);
+//var_dump($blog2);
+
+//多次元配列
+$blogs = [$blog, $blog2];
+
+var_dump($blogs);
 
 ?>
