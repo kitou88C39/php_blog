@@ -17,13 +17,16 @@ foreach ($blog as $key => $value) {
 ?>
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>サンプルHTMLページ</title>
+    <title>ブログ</title>
 </head>
 <body>
-    <h1>ようこそ！</h1>
-    <p>これはサンプルのHTMLページです。</p>
+    <h2><?php $blog['title']; ?></h2>
+    <p>投稿日:</p>
+    <p>カテゴリ:</p>
+    <br>
+    <p></p>
 </body>
 </html>
