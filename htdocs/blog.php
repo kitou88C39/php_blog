@@ -24,9 +24,9 @@ foreach ($blog as $key => $value) {
 </head>
 <body>
     <h2><?php $blog['title']; ?></h2>
-    <p>投稿日:</p>
-    <p>カテゴリ:</p>
+    <p>投稿日:<?php $blog['post_at']; ?></p>
+    <p>カテゴリ:<?php $blog['category']; ?></p>
     <br>
-    <p></p>
+    <p><?php $blog['content']; ?></p>
 </body>
 </html>
