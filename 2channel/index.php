@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>ようこそ！</h1>
-    <p>これはサンプルのHTMLページです。</p>
+    <h1 class="title">PHP掲示板アプリ</h1>
+    <div class="boardwrapper">
+        <form class="formWrapper">
+        <div>
+                <input type="submit" value="書き込む">
+        </div>
+        </form>
+    </div>
 </body>
 </html>
