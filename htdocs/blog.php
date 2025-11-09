@@ -2,8 +2,12 @@
 
 $blog = $_POST;
 
+if($blog["publish_status"] === "un_publish") {
+    echo '記事がありません。';
+    return;
+}
 
-// if($blog["publish_status"] == "un_publish") {
+// if($blog["publish_status"] === "un_publish") {
     
 // foreach ($blog as $key => $value) {
 //     echo $key . ':' . htmlspecialchars($value, ENT_QUOTES,'UTF-8');
@@ -24,10 +28,10 @@ $blog = $_POST;
     <title>ブログ</title>
 </head>
 <body>
-    <h2><?php $blog['title']; ?></h2>
-    <p>投稿日:<?php $blog['post_at']; ?></p>
-    <p>カテゴリ:<?php $blog['category']; ?></p>
+    <h2><?php echo htmlspecialchars($blog['title'],ENT_QUOTES,'UTF-8'); ?></h2>
+    <p>投稿日:<?php echo htmlspecialchars($blog['post_at'],ENT_QUOTES,'UTF-8'); ?></p>
+    <p>カテゴリ:<?php echo htmlspecialchars($blog['category'],ENT_QUOTES,'UTF-8'); ?></p>
     <br>
-    <p><?php $blog['content']; ?></p>
+    <p><?php echo htmlspecialchars($blog['content'],ENT_QUOTES,'UTF-8'); ?> ?></p>
 </body>
 </html>
