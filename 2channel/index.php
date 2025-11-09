@@ -1,8 +1,11 @@
+<?php echo "Hello PHP";
+?>
+
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>サンプルHTMLページ</title>
+    <title>PHP掲示板</title>
 </head>
 <body>
     <h1>ようこそ！</h1>
