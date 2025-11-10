@@ -6,8 +6,18 @@ if(!empty($_POST["submitButton"])){
 }
 
 //DB接続
-$pdh = new PDO('mysql:host=localhost;dbname=test',$user,$pass);
+try{
+    $pdo = new PDO('mysql:host=localhost;dbname=test',"root","root");
+} catch(PDOException $e){
+    echo $e->getMessage();
+}
 
+//DBからコメントデータを取得
+$sql = "SELECT `id`, `username`, `comment`, `postDate` FROM `bbs-table`;";
+$pdo->query("$sql");
+
+//DB接続を閉じる
+$pdo = null;
 
 ?>
 
