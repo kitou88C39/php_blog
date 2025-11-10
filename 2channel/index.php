@@ -1,8 +1,12 @@
 <?php
 
+$comment_array = array();
+
+//フォームを打ち込んだ時
 if(!empty($_POST["submitButton"])){
-    echo $_POST["username"];
-    echo $_POST["comment"];
+    $stmt = $pdo->prepare("INSERT INTO REGISTRY(name, value) VALUES(:name, :value)");
+    $stmt->bindValue(":name", $name);
+    $stmt->bindParam(":value", $value);
 }
 
 //DB接続
