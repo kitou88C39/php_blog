@@ -11,25 +11,13 @@ try{
     echo $e->getMessage();
 }
 
-// フォームが送信されたとき
-if (!empty($_POST["submitButton"])) {
-    // フォームの値を取得
-    $username = $_POST["username"];
-    $comment = $_POST["comment"];
+//フォームを打ち込んだ時
+if(!empty($_POST["submitButton"])) {
     $postDate = date("Y-m-d H:i:s");
-
-    // SQLを準備
-    $stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate)");
-
-    // 値をバインド
-    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
-    $stmt->bindValue(":comment", $comment, PDO::PARAM_STR);
-    $stmt->bindValue(":postDate", $postDate, PDO::PARAM_STR);
-
-    // 実行
-    $stmt->execute();
+$stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate)");
+    $stmt->bindValue(":name", $name);
+    $stmt->bindParam(":value", $value);
 }
-
 
 
 //DBからコメントデータを取得
