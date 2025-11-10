@@ -34,16 +34,18 @@ $pdo = null;
 <body>
     <h1 class="title">PHP掲示板アプリ</h1>
         <div class="boardwrapper">
+            <?php foreach($comment_array as $comment): ?>
             <article>
                 <div class="wrapper">
                     <div class="nameArea">
                         <span>名前:</span>
-                        <p class="username">shincode</p>
+                        <p class="username"><?php echo $comment["username"]; ?></p>
                         <time>:2022/07/15</time>
                     </div>
                     <p class="comment">手書きコメントです。</p>
                 </div>
             </article>
+            <?php endforeach; ?>
         <form class="formWrapper">
             <div>
                 <input type="submit" value="書き込む" name="submitButton">
