@@ -11,11 +11,21 @@
 </head>
 <body>
     <h1 class="title">PHP掲示板アプリ</h1>
-    <div class="boardwrapper">
+        <div class="boardwrapper">
+            <article>
+                <div class="wrapper">
+                
+                </div>
+            </article>
         <form class="formWrapper">
-        <div>
+            <div>
                 <input type="submit" value="書き込む">
-        </div>
+                <label for="">名前:</label>
+                <input type="text" name="username">
+            </div>
+            <div>   
+                <textarea class="commentTextArea"></textarea>
+            </div>
         </form>
     </div>
 </body>
