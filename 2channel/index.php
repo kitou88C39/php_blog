@@ -1,13 +1,8 @@
 <?php
 
 $comment_array = array();
-
-//フォームを打ち込んだ時
-if(!empty($_POST["submitButton"])){
-    $stmt = $pdo->prepare("INSERT INTO REGISTRY(name, value) VALUES(:name, :value)");
-    $stmt->bindValue(":name", $name);
-    $stmt->bindParam(":value", $value);
-}
+$pdo = null;
+$stmt = null;
 
 //DB接続
 try{
@@ -15,6 +10,27 @@ try{
 } catch(PDOException $e){
     echo $e->getMessage();
 }
+
+// フォームが送信されたとき
+if (!empty($_POST["submitButton"])) {
+    // フォームの値を取得
+    $username = $_POST["username"];
+    $comment = $_POST["comment"];
+    $postDate = date("Y-m-d H:i:s");
+
+    // SQLを準備
+    $stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate)");
+
+    // 値をバインド
+    $stmt->bindValue(":username", $username, PDO::PARAM_STR);
+    $stmt->bindValue(":comment", $comment, PDO::PARAM_STR);
+    $stmt->bindValue(":postDate", $postDate, PDO::PARAM_STR);
+
+    // 実行
+    $stmt->execute();
+}
+
+
 
 //DBからコメントデータを取得
 $sql = "SELECT `id`, `username`, `comment`, `postDate` FROM `bbs-table`;";
