@@ -1,10 +1,15 @@
 <?php
+
+echo $_POST["username"];
+echo $_POST["comment"];
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP掲示板</title>
     <link rel="stylesheet" href="style.css">
@@ -14,7 +19,12 @@
         <div class="boardwrapper">
             <article>
                 <div class="wrapper">
-                
+                    <div class="nameArea">
+                        <span>名前:</span>
+                        <p class="username">shincode</p>
+                        <time>:2022/07/15</time>
+                    </div>
+                    <p class="comment">手書きコメントです。</p>
                 </div>
             </article>
         <form class="formWrapper">
@@ -23,8 +33,8 @@
                 <label for="">名前:</label>
                 <input type="text" name="username">
             </div>
-            <div>   
-                <textarea class="commentTextArea"></textarea>
+            <div>
+                <textarea class="commentTextArea" name="comment"></textarea>
             </div>
         </form>
     </div>
