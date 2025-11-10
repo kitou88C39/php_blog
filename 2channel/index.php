@@ -14,9 +14,17 @@ try{
 //フォームを打ち込んだ時
 if(!empty($_POST["submitButton"])) {
     $postDate = date("Y-m-d H:i:s");
+
+try{
 $stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate)");
-    $stmt->bindValue(":name", $name);
-    $stmt->bindParam(":value", $value);
+    $stmt->bindParam(":username", $_POST["username"]);
+    $stmt->bindParam(":comment", $_POST["comment"]);
+    $stmt->bindParam(":comment", $postDate);
+
+    $stmt->execute();
+
+} catch(PDOException $e){
+    echo $e->getMessage();
 }
 
 
