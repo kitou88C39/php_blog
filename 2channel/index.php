@@ -1,5 +1,6 @@
 <?php
 
+$data_default_timezone_set("Asia/Tokyo");
 $comment_array = array();
 $pdo = null;
 $stmt = null;
@@ -13,6 +14,18 @@ try{
 
 //フォームを打ち込んだ時
 if(!empty($_POST["submitButton"])) {
+    //名前のチェック
+    if(empty($_POST["username"])) {
+        echo "名前を入力してください。";
+        return;
+    }
+    //コメントのチェック
+    if(empty($_POST["comment"])) {
+        echo "コメントを入力してください。";
+        return;
+    }
+
+
     $postDate = date("Y-m-d H:i:s");
 
 try{
