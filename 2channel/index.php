@@ -5,7 +5,12 @@ if(!empty($_POST["submitButton"])){
     echo $_POST["comment"];
 }
 
+//DB接続
+$pdh = new PDO('mysql:host=localhost;dbname=test',$user,$pass);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
