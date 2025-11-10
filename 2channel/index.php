@@ -17,16 +17,16 @@ if(!empty($_POST["submitButton"])) {
 
 try{
 $stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `postDate`) VALUES (:username, :comment, :postDate)");
-    $stmt->bindParam(":username", $_POST["username"]);
-    $stmt->bindParam(":comment", $_POST["comment"]);
-    $stmt->bindParam(":comment", $postDate);
+    $stmt->bindParam(":username", $_POST["username"], PDO::PARAM_STR);
+    $stmt->bindParam(":comment", $_POST["comment"], PDO::PARAM_STR);
+    $stmt->bindParam(":postDate", $postDate, PDO::PARAM_STR);
 
     $stmt->execute();
 
 } catch(PDOException $e){
     echo $e->getMessage();
 }
-
+}
 
 //DBからコメントデータを取得
 $sql = "SELECT `id`, `username`, `comment`, `postDate` FROM `bbs-table`;";
